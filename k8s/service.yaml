@@ -1,11 +1,13 @@
 kind: Service
+apiVersion: v1
 metadata:
   name: cicd-demo
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: cicd-demo
   ports:
     - protocol: TCP
       port: 80
       targetPort: 3000
+      nodePort: 30548
